@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -84,7 +85,7 @@ private void showImages(){
 
 
     //@Override
-    public void onRequestPerissionsResult(int requestCode, @NonNull String[] permissions,@NonNull int[] grantResults){
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,@NonNull int[] grantResults){
       if(requestCode==1000){
           if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
               showImages();
@@ -97,6 +98,7 @@ private void showImages(){
 
     public void layout(ArrayList<Cell> cells)
     {
+        //Log.d("err", "layout: " + cells.size());
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.gallery);
         recyclerView.setHasFixedSize(true);
 

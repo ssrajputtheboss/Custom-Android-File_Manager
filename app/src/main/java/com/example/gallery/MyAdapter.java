@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Context context;
 
     public MyAdapter(Context context ,ArrayList<Cell> galleryList){
-        Log.d("hello", "MyAdapter: ");
+        Log.d("hello", "MyAdapter: " + galleryList.size());
         this.galleryList=galleryList;
         this.context=context;
     }
